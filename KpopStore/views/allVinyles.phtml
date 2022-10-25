@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<section class="intro">
+	<h1>Tous nos vinyles</h1>
+	<a href="index.php?road=albums">Nos albums</a>
+</section>
+<section>
+	<?php foreach($vinyles as $vinyle): ?>
+    <article>
+
+        <h2 class="product_name"><?= htmlspecialchars($vinyle['product_name']) ?></h2>
+		<p><?= htmlspecialchars($vinyle['artist_name']) ?></p>
+		<p>prix: <?= htmlspecialchars($vinyle['price']) ?>€</p>
+		<p>numéro de référence: <?= htmlspecialchars($vinyle['product_id']) ?></p>
+		<p>quantité en stock: <?= htmlspecialchars($vinyle['quantity']) ?></p>
+		<p>ajouté le: <?= htmlspecialchars($vinyle['created_at']) ?></p>
+		<p>modifié le: <?= htmlspecialchars($vinyle['modified_at']) ?></p>
+
+	</article>
+	<?php endforeach; ?>
+</section>

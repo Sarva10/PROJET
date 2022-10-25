@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<section class="intro">
+	<h1>Tous nos artistes</h1>
+</section>
+<section>
+	<?php foreach($artists as $artist): ?>
+    <article>
+
+		<h2 class="product_name"><?= $artist['artist_name'] ?></h2>
+		<p>numéro référent: <?= $artist['artist_id'] ?></p>
+        <p>catégorie: <?= $artist['name'] ?></p>
+
+
+	</article>
+	<?php endforeach; ?>
+</section>

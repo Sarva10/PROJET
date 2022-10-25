@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Votre magasin en ligne de K-Pop">
+	<title>URPOP</title>
+	<link rel="stylesheet" href="public/css/style.css">
+</head>
+
+<body>
+    <main class="container">    
+        <h1>Se connecter</h1>
+        <form action="index.php?road=submitConnect" method="POST">
+
+        <?php require_once('_errors.phtml');?> 
+
+            <label for="email">Entrez votre email</label>
+            <input type="text" name="email" size="30" value="adresse@hotmail.fr">
+
+            <label for="email">Entrez votre mot de passe</label>
+            <input type="password" name="password" size="30" id="password_1" value="123456Abc&">
+
+            <input type="submit" value="Valider"/>
+        </form>
+
+        <form>
+
+            <input type="text" name="email" size="30" required/>
+            <input type="password" name="password" size="30" id="password_1" value="123456Abc&" required/>
+
+            <input type="submit" value="Submit"/>
+
+        </form>
+
+    </main>
+</body>
+
+</html>

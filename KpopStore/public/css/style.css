@@ -1,0 +1,57 @@
+body * {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 50%;
+}
+body {
+	font-family: 'Verdana';
+	line-height: 1.5;
+	font-size: 1.8rem;
+	background-color: #fff;
+}
+#logo {
+
+    width: 250px;
+
+}
+.nav span {
+    text-decoration: wavy underline;
+}
+
+.nav {
+	margin-bottom: 3rem;
+    background-color: pink ;
+}
+.nav a {
+    color: blueviolet;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    color: blue;
+}
+.nav ul {
+    list-style: none;
+}
+.nav li {
+    padding:0.5rem;
+    display:inline;
+    
+}
+.blocSearch a {
+    padding: 0.5rem;
+}
+.product_name {
+    font-size: 2rem;
+    color:blueviolet;
+}
+article {
+    display: flex;
+    display: inline-block;
+    flex-wrap:wrap;
+    padding: 2rem;
+    margin:2rem;
+    border: black solid;
+}

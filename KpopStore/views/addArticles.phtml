@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Votre magasin en ligne de K-Pop">
+	<title>URPOP</title>
+	<link rel="stylesheet" href="public/css/style.css">
+</head>
+
+<body>
+	<main class="container">
+        <h1>Ajouter un artiste</h1>
+        <form enctype="multipart/form-data" action="index.php?road=AddArtist" method="POST">
+
+        <?php require_once('_errors.phtml');?>
+        <?php require_once('_validated.phtml');?>
+
+
+            <label for="artist_name">Nom de l'artiste :</label>
+            <input type="text" name="artist_name" value="<?php if(isset($addArticle['addArtistName'])) {
+                            echo htmlspecialchars($addArticle['addArtistName']);
+                        } ?>" required >
+
+
+
+            <label for="artist_category">Catégorie de l'artiste :</label>
+            <?php foreach($catsArtist as $catArtist): ?>
+                <input type="radio" name="artist_category" required value="<?= htmlspecialchars($catArtist['category_artist_id']) ?>" ><?= htmlspecialchars($catArtist['name']) ?>
+            <?php endforeach; ?>
+
+            <input type = "submit" value = "valider !">
+
+
+        </form>
+
+
+		<h1>Ajouter un article</h1>
+        <form enctype="multipart/form-data" action="index.php?road=Add" method="POST">
+
+        <?php require_once('_errors.phtml');?>
+        <?php require_once('_validated.phtml');?>
+
+
+            <label for="product_name">Nom de l'article :</label>
+            <input type="text" name="product_name" value="<?php if(isset($addArticle['addProductName'])) {
+                            echo htmlspecialchars($addArticle['addProductName']);
+                            } ?>" required >
+
+
+            <label for="price">Prix de l'article :</label>
+            <input type="number" name="price" step="0.01" min="0" required>
+
+
+            <label for="product_artist">Artiste :</label>
+            <select name="product_artist">
+            <?php foreach($artists as $artist): ?>
+                <option value="<?= htmlspecialchars($artist['artist_id']) ?>" required>
+                    <?= htmlspecialchars($artist['artist_name']) ?>
+                </option>
+            <?php endforeach; ?>
+            </select>
+
+            
+            <label for="product_category">Catégorie :</label>
+            <select name="product_category"> 
+            <?php foreach($categories as $category): ?>
+                    <option value="<?= htmlspecialchars($category['id']) ?>" required>
+                        <?= htmlspecialchars($category['category_name']) ?>
+                    </option>
+            <?php endforeach; ?>    
+            </select>
+    
+            
+            <label for="quantity">Quantité en stock :</label>
+            <input type="number" name="quantity" step="1" min="0" required>
+
+
+            <label for="product_img">Photo du produit : </label>
+            <input type="file" accept=".jpg, .jpeg, .png" name="product_img">
+            <small>au format 'jpg', 'jpeg' ou 'png'</small></br>
+
+
+            <input type = "submit" value = "valider !">
+
+        </form>
+	</main>
+</body>
+
+</html>

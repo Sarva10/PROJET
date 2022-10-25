@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Votre magasin en ligne de K-Pop">
+	<title>URPOP</title>
+	<link rel="stylesheet" href="public/css/style.css">
+</head>
+<body>
+	<section>
+		<h1>Les nouvelles sorties de vos artistes</h1>
+		<?php foreach($articles as $article): ?>
+        	<article>
+				<h2 class="product_name"><?= $article['product_name'] ?></h2>
+				<p><?= $article['price'] ?>€</p>
+				<p><?= $article['artist_name'] ?></p>
+			</article>
+		<?php endforeach; ?>
+	</section>
+</body>
+
